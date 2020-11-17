@@ -5,6 +5,9 @@
  */
 package com.wsstore.workspacestore.forms;
 
+import java.security.MessageDigest;
+import javax.swing.JPasswordField;
+
 /**
  *
  * @author avj02
@@ -119,8 +122,27 @@ public class FormLogin extends javax.swing.JFrame {
         new FormCadastro().setVisible(true);
     }//GEN-LAST:event_btCadastroActionPerformed
 
+    private String criptoSenha(JPasswordField s){
+        String senha = new String(s.getPassword());
+        try {
+            MessageDigest algorithm = MessageDigest.getInstance("SHA-256");
+            byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
+            StringBuilder hexStringSenhaAdmin = new StringBuilder();
+            for (byte b: messageDigest) {
+                hexStringSenhaAdmin.append(String.format("%02X", 0xFF & b));
+            }
+        return hexStringSenhaAdmin.toString();
+        }catch (Exception e){
+        return "Erro de criptografia: "+e;
+    }
+        
+    }     
+    
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-        new FormPrincipal().setVisible(true);    
+        String senha = new String(ctSenha.getPassword());
+        if (senha.equals("12345")) {
+            new FormPrincipal().setVisible(true);
+        }
     }//GEN-LAST:event_btLoginActionPerformed
 
     /**

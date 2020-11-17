@@ -29,11 +29,16 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnAbrir = new javax.swing.JMenu();
         mnAbrirCliente = new javax.swing.JMenu();
         mnAbrirClienteCadastro = new javax.swing.JMenuItem();
+        mnAbrirLivros = new javax.swing.JMenu();
+        mnAbrirLivrosCadastro = new javax.swing.JMenuItem();
         mnSistema = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Gerenciamento de Dados");
@@ -52,6 +57,24 @@ public class FormPrincipal extends javax.swing.JFrame {
         mnAbrirCliente.add(mnAbrirClienteCadastro);
 
         mnAbrir.add(mnAbrirCliente);
+
+        mnAbrirLivros.setText("Livros");
+        mnAbrirLivros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAbrirLivrosActionPerformed(evt);
+            }
+        });
+
+        mnAbrirLivrosCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirLivrosCadastro.setText("Cadastro");
+        mnAbrirLivrosCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAbrirLivrosCadastroActionPerformed(evt);
+            }
+        });
+        mnAbrirLivros.add(mnAbrirLivrosCadastro);
+
+        mnAbrir.add(mnAbrirLivros);
 
         jMenuBar1.add(mnAbrir);
 
@@ -78,6 +101,14 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void mnAbrirClienteCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirClienteCadastroActionPerformed
         openForm(new FormCliente());
     }//GEN-LAST:event_mnAbrirClienteCadastroActionPerformed
+
+    private void mnAbrirLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirLivrosActionPerformed
+     //gg
+    }//GEN-LAST:event_mnAbrirLivrosActionPerformed
+
+    private void mnAbrirLivrosCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirLivrosCadastroActionPerformed
+        openForm(new FormLivros());
+    }//GEN-LAST:event_mnAbrirLivrosCadastroActionPerformed
     
     private void openForm(JDialog f){
         f.setModal(true);
@@ -120,10 +151,13 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu mnAbrir;
     private javax.swing.JMenu mnAbrirCliente;
     private javax.swing.JMenuItem mnAbrirClienteCadastro;
+    private javax.swing.JMenu mnAbrirLivros;
+    private javax.swing.JMenuItem mnAbrirLivrosCadastro;
     private javax.swing.JMenu mnSistema;
     // End of variables declaration//GEN-END:variables
 }

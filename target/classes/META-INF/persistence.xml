@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.wsstore.workspacestore.entidades.Cliente</class>
     <class>com.wsstore.workspacestore.entidades.Funcionario</class>
+    <class>com.wsstore.workspacestore.entidades.Livros</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bd wsstore?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

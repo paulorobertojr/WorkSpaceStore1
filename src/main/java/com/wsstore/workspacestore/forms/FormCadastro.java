@@ -5,6 +5,11 @@
  */
 package com.wsstore.workspacestore.forms;
 
+import com.google.protobuf.Empty;
+import com.wsstore.workspacestore.entidades.Funcionario;
+import com.wsstore.workspacestore.models.ModelFuncionario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author avj02
@@ -89,7 +94,7 @@ public class FormCadastro extends javax.swing.JFrame {
         });
 
         try {
-            ctfIdadeFunc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+            ctfIdadeFunc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -178,7 +183,31 @@ public class FormCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_ctfCPFFuncActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
-        // TODO add your handling code here:
+        String senha = new String(ctSenha.getPassword());
+        String repeteSenha = new String(ctRepeteSenha.getPassword());
+
+        if (ctEmailFunc.getText().isEmpty() || ctFuncao.getText().isEmpty() || ctfTelefoneFunc.getText().isEmpty() || ctfCPFFunc.getText().isEmpty() || ctNomeFunc.getText().isEmpty() || ctfIdadeFunc.getText().isEmpty() || senha.isEmpty() || repeteSenha.isEmpty()) { 
+            JOptionPane.showMessageDialog(rootPane, "Não pode haver campo(s) vazio!");
+            
+        } else if (!senha.equals(repeteSenha)) {
+            JOptionPane.showMessageDialog(rootPane, "A senhas não são iguais!");
+        } else {
+            ModelFuncionario mf = new ModelFuncionario();
+            Funcionario f = new Funcionario();
+            f.setSenha(senha);
+            f.setEmailFunc(ctEmailFunc.getText());
+            f.setCpfFunc(ctfCPFFunc.getText());
+            f.setNomeFunc(ctNomeFunc.getText());
+            f.setIdadeFunc(ctfIdadeFunc.getText());
+            f.setTelefoneFunc(ctfTelefoneFunc.getText());
+            f.setFuncao(ctFuncao.getText());
+                
+            if (mf.salvar(f)) {
+                JOptionPane.showMessageDialog(rootPane, "Funcionário cadastrado com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Erro no cadastrado!");
+            }
+        }
     }//GEN-LAST:event_btSalvarActionPerformed
 
     /**
