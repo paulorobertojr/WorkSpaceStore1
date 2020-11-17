@@ -152,6 +152,12 @@ public class FormCliente extends javax.swing.JDialog {
     }//GEN-LAST:event_ctEmailActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        
+        if (ctNome.getText().isEmpty() || ctEmail.getText().isEmpty() || ctfCPF.getText().isEmpty() || ctfTelefone.getText().isEmpty() || ctIdade.getText().isEmpty()) { 
+            JOptionPane.showMessageDialog(rootPane, "Não pode haver campo(s) vazio!");
+            
+        }else {
+            
         Cliente c = new Cliente();
         ModelCliente mc = new ModelCliente();
         c.setNome(ctNome.getText());
@@ -164,7 +170,10 @@ public class FormCliente extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(rootPane,"Cliente cadastrado com sucesso!");
             }else{
             JOptionPane.showMessageDialog(rootPane,"Erro no cadastro do cliente!");
+        }          
+            
         }
+        
   
     }//GEN-LAST:event_btSalvarActionPerformed
 

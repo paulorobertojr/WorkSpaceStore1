@@ -174,9 +174,9 @@ public class FormLivros extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ctfISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ctPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -207,6 +207,12 @@ public class FormLivros extends javax.swing.JDialog {
     }//GEN-LAST:event_ctAutorActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
+        
+        if (ctTitulo.getText().isEmpty() || ctAutor.getText().isEmpty() || ctEditora.getText().isEmpty() || ctGenero.getText().isEmpty() || ctfISBN.getText().isEmpty() || ctPais.getText().isEmpty() || ctfEdicao.getText().isEmpty() || ctfPreco.getText().isEmpty() || ctfQuantidade.getText().isEmpty()) { 
+            JOptionPane.showMessageDialog(rootPane, "Não pode haver campo(s) vazio!");
+            
+        }else{
+            
         Livros l = new Livros();
         ModelLivros ml = new ModelLivros();
         l.setTitulo(ctTitulo.getText());
@@ -224,6 +230,8 @@ public class FormLivros extends javax.swing.JDialog {
     }else{
          JOptionPane.showMessageDialog(rootPane,"Erro ao cadastrar livro!");
      }
+        }
+        
         
     }//GEN-LAST:event_btSalvarActionPerformed
 

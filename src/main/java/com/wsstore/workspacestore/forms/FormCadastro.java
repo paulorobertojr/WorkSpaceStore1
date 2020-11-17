@@ -191,7 +191,7 @@ public class FormCadastro extends javax.swing.JFrame {
             
         } else if (!senha.equals(repeteSenha)) {
             JOptionPane.showMessageDialog(rootPane, "A senhas não são iguais!");
-        } else {
+    } else {
             ModelFuncionario mf = new ModelFuncionario();
             Funcionario f = new Funcionario();
             f.setSenha(senha);
