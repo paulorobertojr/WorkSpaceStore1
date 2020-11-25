@@ -1,6 +1,7 @@
 package com.wsstore.workspacestore.models;
 
 import com.wsstore.workspacestore.entidades.Livros;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -8,13 +9,13 @@ import javax.persistence.Persistence;
 
 
 public class ModelLivros {
-    public static EntityManager openBD() {
+    public static EntityManager openDB() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("WSStore-PU");
         return emf.createEntityManager();
     }
 
  public boolean salvar(Livros l) {
-        EntityManager em = ModelLivros.openBD(); //Inicío da conexão.
+        EntityManager em = ModelLivros.openDB(); //Inicío da conexão.
 
         try {
             em.getTransaction().begin();//Início da transação.
@@ -38,5 +39,24 @@ public class ModelLivros {
         }
     }
 
+public List<Livros> listaLivros() {
+        EntityManager em = ModelLivros.openDB(); //Abre a conexão
+        try {
+            return em.createQuery("select l from Livros l order by l.titulo").getResultList();
+        } finally {
+            em.close();
+        }
+    }
 
+    public void remove(Long id){
+        EntityManager em = ModelLivros.openDB(); //Abre a conexão
+        try {
+            Livros l = em.find(Livros.class, id);
+            em.getTransaction().begin();
+            em.remove(l);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
+    }
 }

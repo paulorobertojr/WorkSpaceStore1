@@ -1,6 +1,7 @@
 package com.wsstore.workspacestore.models;
 
 import com.wsstore.workspacestore.entidades.Funcionario;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -40,5 +41,27 @@ public boolean salvar(Funcionario f) {
 
     public Funcionario buscaEmail(String text) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+     
+        public List<Funcionario> listaFuncionario() {
+        EntityManager em = ModelFuncionario.openDB(); //Abre a conexão
+        try {
+            return em.createQuery("select f from Funcionario f order by f.nomeFunc").getResultList();
+        } finally {
+            em.close();
+        }
+    }
+        
+    public void remove(Long id){
+        EntityManager em = ModelFuncionario.openDB(); //Abre a conexão
+        try {
+            Funcionario f = em.find(Funcionario.class, id);
+            em.getTransaction().begin();
+            em.remove(f);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
     }
 }

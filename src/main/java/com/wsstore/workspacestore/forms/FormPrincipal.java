@@ -29,25 +29,102 @@ public class FormPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btManterCliente = new javax.swing.JButton();
+        btRegistroLocacoes = new javax.swing.JButton();
+        btRegistroLivros = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnAbrir = new javax.swing.JMenu();
         mnAbrirCliente = new javax.swing.JMenu();
         mnAbrirClienteCadastro = new javax.swing.JMenuItem();
         mnAbrirLivros = new javax.swing.JMenu();
         mnAbrirLivrosCadastro = new javax.swing.JMenuItem();
+        mnAbrirFuncionario = new javax.swing.JMenu();
+        mnAbrirFuncionarioCadastro = new javax.swing.JMenuItem();
+        mnAbrirFuncionarioLista = new javax.swing.JMenuItem();
         mnSistema = new javax.swing.JMenu();
+        mnLocacoes = new javax.swing.JMenuItem();
 
-        jMenu1.setText("jMenu1");
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Gerenciamento de Dados");
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBackground(new java.awt.Color(204, 0, 0));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 8, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-17-07.48.32.png")); // NOI18N
+
+        btManterCliente.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btManterCliente.setForeground(new java.awt.Color(204, 0, 0));
+        btManterCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-19-10.52.30.png")); // NOI18N
+        btManterCliente.setText("Clientes");
+        btManterCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btManterClienteActionPerformed(evt);
+            }
+        });
+
+        btRegistroLocacoes.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btRegistroLocacoes.setForeground(new java.awt.Color(204, 0, 0));
+        btRegistroLocacoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-19-05.58.38.png")); // NOI18N
+        btRegistroLocacoes.setText("Locações");
+        btRegistroLocacoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRegistroLocacoesActionPerformed(evt);
+            }
+        });
+
+        btRegistroLivros.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btRegistroLivros.setForeground(new java.awt.Color(204, 0, 0));
+        btRegistroLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.31.47.png")); // NOI18N
+        btRegistroLivros.setText(" Livros");
+        btRegistroLivros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRegistroLivrosActionPerformed(evt);
+            }
+        });
+
+        jMenuBar1.setBackground(new java.awt.Color(255, 0, 0));
+
+        mnAbrir.setForeground(new java.awt.Color(204, 0, 0));
+        mnAbrir.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.36.37.png")); // NOI18N
         mnAbrir.setText("Abrir");
 
+        mnAbrirCliente.setForeground(new java.awt.Color(204, 0, 0));
+        mnAbrirCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.49.42.png")); // NOI18N
         mnAbrirCliente.setText("Cliente");
 
-        mnAbrirClienteCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirClienteCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirClienteCadastro.setForeground(new java.awt.Color(204, 0, 0));
         mnAbrirClienteCadastro.setText("Cadastro");
         mnAbrirClienteCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +135,8 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         mnAbrir.add(mnAbrirCliente);
 
+        mnAbrirLivros.setForeground(new java.awt.Color(204, 0, 0));
+        mnAbrirLivros.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.50.41.png")); // NOI18N
         mnAbrirLivros.setText("Livros");
         mnAbrirLivros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +145,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         });
 
         mnAbrirLivrosCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirLivrosCadastro.setForeground(new java.awt.Color(204, 0, 0));
         mnAbrirLivrosCadastro.setText("Cadastro");
         mnAbrirLivrosCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,9 +156,49 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         mnAbrir.add(mnAbrirLivros);
 
+        mnAbrirFuncionario.setForeground(new java.awt.Color(204, 0, 0));
+        mnAbrirFuncionario.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.50.21.png")); // NOI18N
+        mnAbrirFuncionario.setText("Funcionário");
+
+        mnAbrirFuncionarioCadastro.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirFuncionarioCadastro.setForeground(new java.awt.Color(204, 0, 0));
+        mnAbrirFuncionarioCadastro.setText("Cadastro");
+        mnAbrirFuncionarioCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAbrirFuncionarioCadastroActionPerformed(evt);
+            }
+        });
+        mnAbrirFuncionario.add(mnAbrirFuncionarioCadastro);
+
+        mnAbrirFuncionarioLista.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnAbrirFuncionarioLista.setForeground(new java.awt.Color(204, 0, 0));
+        mnAbrirFuncionarioLista.setText("Lista");
+        mnAbrirFuncionarioLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnAbrirFuncionarioListaActionPerformed(evt);
+            }
+        });
+        mnAbrirFuncionario.add(mnAbrirFuncionarioLista);
+
+        mnAbrir.add(mnAbrirFuncionario);
+
         jMenuBar1.add(mnAbrir);
 
+        mnSistema.setForeground(new java.awt.Color(204, 0, 0));
+        mnSistema.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.37.52.png")); // NOI18N
         mnSistema.setText("Sistema");
+
+        mnLocacoes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        mnLocacoes.setForeground(new java.awt.Color(204, 0, 0));
+        mnLocacoes.setIcon(new javax.swing.ImageIcon("C:\\Users\\avj02\\Desktop\\PicsArt_11-23-04.51.21.png")); // NOI18N
+        mnLocacoes.setText("Locações");
+        mnLocacoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnLocacoesActionPerformed(evt);
+            }
+        });
+        mnSistema.add(mnLocacoes);
+
         jMenuBar1.add(mnSistema);
 
         setJMenuBar(jMenuBar1);
@@ -87,11 +207,37 @@ public class FormPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btManterCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btRegistroLocacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btRegistroLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 361, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(btManterCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btRegistroLivros, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(btRegistroLocacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -109,6 +255,30 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void mnAbrirLivrosCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirLivrosCadastroActionPerformed
         openForm(new FormLivros());
     }//GEN-LAST:event_mnAbrirLivrosCadastroActionPerformed
+
+    private void btManterClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btManterClienteActionPerformed
+        openForm(new FormManterClientes());
+    }//GEN-LAST:event_btManterClienteActionPerformed
+
+    private void btRegistroLocacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegistroLocacoesActionPerformed
+        openForm(new FormRegistroLocacoes());
+    }//GEN-LAST:event_btRegistroLocacoesActionPerformed
+
+    private void btRegistroLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRegistroLivrosActionPerformed
+        openForm(new FormRegistroLivros());
+    }//GEN-LAST:event_btRegistroLivrosActionPerformed
+
+    private void mnAbrirFuncionarioListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirFuncionarioListaActionPerformed
+        openForm(new FormRegistroFuncionarios());
+    }//GEN-LAST:event_mnAbrirFuncionarioListaActionPerformed
+
+    private void mnLocacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnLocacoesActionPerformed
+        openForm(new FormLocacoes());
+    }//GEN-LAST:event_mnLocacoesActionPerformed
+
+    private void mnAbrirFuncionarioCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnAbrirFuncionarioCadastroActionPerformed
+        openForm(new FormCadastro());
+    }//GEN-LAST:event_mnAbrirFuncionarioCadastroActionPerformed
     
     private void openForm(JDialog f){
         f.setModal(true);
@@ -151,13 +321,23 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JButton btManterCliente;
+    private javax.swing.JButton btRegistroLivros;
+    private javax.swing.JButton btRegistroLocacoes;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu mnAbrir;
     private javax.swing.JMenu mnAbrirCliente;
     private javax.swing.JMenuItem mnAbrirClienteCadastro;
+    private javax.swing.JMenu mnAbrirFuncionario;
+    private javax.swing.JMenuItem mnAbrirFuncionarioCadastro;
+    private javax.swing.JMenuItem mnAbrirFuncionarioLista;
     private javax.swing.JMenu mnAbrirLivros;
     private javax.swing.JMenuItem mnAbrirLivrosCadastro;
+    private javax.swing.JMenuItem mnLocacoes;
     private javax.swing.JMenu mnSistema;
     // End of variables declaration//GEN-END:variables
 }

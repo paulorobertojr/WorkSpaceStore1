@@ -1,6 +1,7 @@
 package com.wsstore.workspacestore.models;
 
 import com.wsstore.workspacestore.entidades.Cliente;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -39,4 +40,23 @@ public class ModelCliente {
         }
     }
 
+    public List<Cliente> listaCliente() {
+        EntityManager em = ModelCliente.openDB(); //Abre a conexão
+        try {
+            return em.createQuery("select c from Cliente c order by c.nome").getResultList();
+        } finally {
+            em.close();
+        }
+    }
+    public void remove(Long id){
+        EntityManager em = ModelCliente.openDB(); //Abre a conexão
+        try {
+            Cliente c = em.find(Cliente.class, id);
+            em.getTransaction().begin();
+            em.remove(c);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        }
+    }
 }
